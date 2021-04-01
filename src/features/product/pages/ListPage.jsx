@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Container, Box, Grid, makeStyles, Paper } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
+import productApi from 'api/productApi';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -16,6 +18,14 @@ const useStyles = makeStyles((theme) => ({
 
 function ListPage(props) {
   const classes = useStyles();
+
+useEffect(() => {
+  (async () => {
+    const response = await productApi.getAll({ _page: 1, limit: 10});
+    console.log({response});
+  })();
+}, []);
+
   return (
     <Box>
       <Container>
