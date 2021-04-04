@@ -3,6 +3,7 @@ import { Container, Box, Grid, makeStyles, Paper, Typography } from '@material-u
 import { red } from '@material-ui/core/colors';
 import productApi from 'api/productApi';
 import ProductSkeletonList from '../componetns/ProductSkeletonList';
+import ProductList from '../componetns/ProductList';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   right: {
-    flex: '1 1 auto',
+    flex: '1 1 0',
   },
 
 }));
@@ -32,7 +33,7 @@ useEffect(() => {
       console.log('Failed to fetch product list', error);
     }
     
-    // setLoading(false);
+    setLoading(false);
   })();
 }, []);
 
@@ -44,9 +45,7 @@ useEffect(() => {
             <Paper elevation={0}>left column</Paper>
           </Grid>
           <Grid item className={classes.right}>
-            <Paper elevation={0}>
-              {loading ? <ProductSkeletonList/> : <Typography>Product list</Typography>}
-            </Paper>
+            <Paper elevation={0}>{loading ? <ProductSkeletonList /> : <ProductList data={productList} />}</Paper>
           </Grid>
         </Grid>
       </Container>
