@@ -5,14 +5,15 @@ import { Tab, Tabs } from '@material-ui/core';
 ProductSort.propTypes = {
     currentSort: PropTypes.string.isRequired,
     onChange: PropTypes.func,
+  };
+  
 
-};
-
-function ProductSort(currentSort, onChange) {
+function ProductSort({currentSort, onChange}) {
 
     const handleSortChange = (event, newValue) => {
-        if (onchange) onChange(newValue)
-    }
+        if (onChange) onChange(newValue)
+    };
+
     return (
         <Tabs 
         value={currentSort}
@@ -21,8 +22,8 @@ function ProductSort(currentSort, onChange) {
         onChange={handleSortChange}
         aria-label="disabled tabs example"
         >
-            <Tab label="Giá thấp tới cao" value="salePrice: ASC"> </Tab>
-            <Tab label="Giá cao tới thấp" value="salePrice: DESC"> </Tab>
+            <Tab label="Giá thấp tới cao" value="salePrice:ASC"> </Tab>
+            <Tab label="Giá cao tới thấp" value="salePrice:DESC"> </Tab>
         </Tabs>
     );
 }
