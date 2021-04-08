@@ -6,10 +6,11 @@ import FilterByPrice from './Filters/FilterByPrice';
 
 ProductFilters.propTypes = {
     filters: PropTypes.object.isRequired,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
 };
 
 function ProductFilters(filters, onChange) {
+
     const handleCategoryChange = (newCategoryId) => {
         if(!onChange) return;
         
