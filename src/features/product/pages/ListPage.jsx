@@ -71,17 +71,15 @@ const handleSortChange = (newSortValue) => {
   setFilters((prevFilters) => ({
     ...prevFilters,
     _sort: newSortValue,
-  }))
+  }));
 }
 
 const handleFilterChange = (newFilters) => {
   setFilters((prevFilters) => ({
     ...prevFilters,
     ...newFilters,
-  }))
+  }));
 }
-
-
 
   return (
     <Box>
