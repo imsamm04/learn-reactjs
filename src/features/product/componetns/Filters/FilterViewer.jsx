@@ -26,7 +26,7 @@ const FILTER_LIST = [
     isActive: (filters) => filters.isFreeShip,
     isVisible: () => true,
     isRemovable: false,
-    onRemove: () => {},
+    onRemove: () => { },
     onToggle: (filters) => {
       const newFilters = { ...filters };
       if (newFilters.isFreeShip) {
@@ -49,7 +49,7 @@ const FILTER_LIST = [
       delete newFilters.isPromotion;
       return newFilters;
     },
-    onToggle: () => {},
+    onToggle: () => { },
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ const FILTER_LIST = [
       delete newFilters.salePrice_gte;
       return newFilters;
     },
-    onToggle: () => {},
+    onToggle: () => { },
   },
   // {
   //   id: 4,
@@ -102,20 +102,20 @@ function FilterViewer({ filters = {}, onChange = null }) {
               x.isRemovable
                 ? null
                 : () => {
-                    if (!onChange) return;
+                  if (!onChange) return;
 
-                    const newFilters = x.onToggle(filters);
-                    onChange(newFilters);
-                  }
+                  const newFilters = x.onToggle(filters);
+                  onChange(newFilters);
+                }
             }
             onDelete={
               x.isRemovable
                 ? () => {
-                    if (!onChange) return;
+                  if (!onChange) return;
 
-                    const newFilters = x.onRemove(filters);
-                    onChange(newFilters);
-                  }
+                  const newFilters = x.onRemove(filters);
+                  onChange(newFilters);
+                }
                 : null
             }
           />
