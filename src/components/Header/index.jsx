@@ -84,7 +84,7 @@ export default function Header() {
 
           <Typography variant="h6" className={classes.title}>
             <Link className={classes.link} to="/">
-              EZ SHOP
+              TIKI FAKE
             </Link>
           </Typography>
 
