@@ -72,4 +72,5 @@ function FilterByCategory({onChange}) {
     );
 }
 
+
 export default FilterByCategory;
