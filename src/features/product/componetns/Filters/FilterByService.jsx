@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 FilterByService.propTypes = {
   filters: PropTypes.object,
   onChange: PropTypes.func,
