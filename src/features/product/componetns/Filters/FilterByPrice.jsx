@@ -63,5 +63,4 @@ function FilterByPrice({onChange}) {
         </Box>
     );
 }
-
 export default FilterByPrice;
