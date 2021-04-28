@@ -35,4 +35,5 @@ function ProductFilters({filters, onChange}) {
         </div>
     );
 }
+
 export default ProductFilters;

@@ -56,7 +56,6 @@ function FilterByCategory({onChange}) {
             onChange(category.id)
         }
     }
-
     return (
         <Box className={classes.root}>
             <Typography variant="subtitle2">DANH MỤC SẢN PHẨM</Typography>

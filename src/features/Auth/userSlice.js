@@ -28,6 +28,7 @@ const userSlice = createSlice({
     current: JSON.parse(localStorage.getItem(StorageKeys.USER)) || {},
     settings: {},
   },
+  
   reducers: {
     logout(state) {
       // clear local storage
