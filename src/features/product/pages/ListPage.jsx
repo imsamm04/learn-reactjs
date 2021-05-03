@@ -8,8 +8,6 @@ import ProductList from '../componetns/ProductList';
 import ProductSkeletonList from '../componetns/ProductSkeletonList';
 import ProductSort from '../componetns/ProductSort';
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {},
 
@@ -96,7 +94,6 @@ const setNewFilters = (newFilters) => {
             </Paper>
           </Grid>
           <Grid item className={classes.right}>
-            
             <Paper elevation={0}>
               <ProductSort currentSort={filters._sort} onChange={handleSortChange} />
               <FilterViewer filters={filters} onChange={setNewFilters} />
