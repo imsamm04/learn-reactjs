@@ -1,9 +1,11 @@
 import { Box, Container, Grid, makeStyles, Paper } from '@material-ui/core';
+import AddToCardForm from 'features/product/componetns/AddToCardForm';
 import ProductInfo from 'features/product/componetns/ProductInfo';
 import ProductThumbnail from 'features/product/componetns/ProductThumbnail';
 import useProductDetail from 'features/product/hooks/useProductDetail';
 import React from 'react';
 import { useRouteMatch } from 'react-router';
+
 
 DetailPage.propTypes = {};
 
@@ -32,6 +34,11 @@ function DetailPage() {
   if(loading) {
     return <Box>Loading</Box>
   }
+
+  const handleAddToCartSubmit = (formValues) => {
+    console.log('Form submit', formValues);
+  }
+
   return (
     <Box className={classes.root}>
       <Container>
@@ -42,9 +49,9 @@ function DetailPage() {
             </Grid>
             <Grid container item className={classes.right}>
               <ProductInfo product={product}/>
+              <AddToCardForm onSubmit={handleAddToCartSubmit} />
             </Grid>
           </Grid>
-         
         </Paper>
       </Container>
     </Box>
