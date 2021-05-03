@@ -6,7 +6,6 @@ ProductSort.propTypes = {
     currentSort: PropTypes.string.isRequired,
     onChange: PropTypes.func,
   };
-  
 
 function ProductSort({currentSort, onChange}) {
 
