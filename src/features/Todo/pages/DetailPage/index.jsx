@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 function DetailPage() {
   const classes = useStyles();
   const {
@@ -35,9 +36,11 @@ function DetailPage() {
     return <Box>Loading</Box>
   }
 
+
   const handleAddToCartSubmit = (formValues) => {
     console.log('Form submit', formValues);
   }
+
 
   return (
     <Box className={classes.root}>
