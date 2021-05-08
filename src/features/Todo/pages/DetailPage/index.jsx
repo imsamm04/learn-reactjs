@@ -1,6 +1,7 @@
 import { Box, Container, Grid, makeStyles, Paper } from '@material-ui/core';
 import AddToCardForm from 'features/product/componetns/AddToCardForm';
 import ProductInfo from 'features/product/componetns/ProductInfo';
+import ProductMenu from 'features/product/componetns/ProductMenu';
 import ProductThumbnail from 'features/product/componetns/ProductThumbnail';
 import useProductDetail from 'features/product/hooks/useProductDetail';
 import React from 'react';
@@ -56,6 +57,7 @@ function DetailPage() {
             </Grid>
           </Grid>
         </Paper>
+        <ProductMenu />
       </Container>
     </Box>
   );
