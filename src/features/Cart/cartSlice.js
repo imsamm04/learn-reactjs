@@ -3,7 +3,8 @@ const { createSlice } = require('@reduxjs/toolkit');
 const cartSlice = createSlice({
   name: 'counter',
   initialState: {
-      
+     
+    
   },
   reducers: {
     increase(state) {
@@ -15,6 +16,7 @@ const cartSlice = createSlice({
     },
   },
 });
+
 
 const { actions, reducer } = counterSlice;
 export const { increase, decrease } = actions; // named export
