@@ -10,7 +10,6 @@ ProductList.propTypes = {
 ProductList.defaultProps = {
     data: [],
 }
-// abc
 
 function ProductList({data}) {
     console.log(data);
