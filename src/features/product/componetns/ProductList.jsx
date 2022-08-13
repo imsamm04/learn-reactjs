@@ -18,7 +18,7 @@ function ProductList({data}) {
             <Grid container>
                 {data.map((product) => (
                     <Grid item key={product.id} sx = {12} sm = {6} md = {4} lg = {3} >
-                       <Product  product={product}/>
+                       <Product product={product}/>
                     </Grid>
                 ))}
             </Grid>
