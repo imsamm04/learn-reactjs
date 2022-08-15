@@ -9,7 +9,6 @@ function ProductAdditional(props) {
     return (
         <div>
             Product additinal
-            {/* <div>product list</div> */}
         </div>
     );
 }
