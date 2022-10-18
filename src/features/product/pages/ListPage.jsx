@@ -19,19 +19,18 @@ const useStyles = makeStyles((theme) => ({
     flex: '1 1 0',
   },
 
-  pagination : {
+  pagination: {
     display: 'flex',
     flexFlow: 'row nowrap',
     justifyContent: 'center',
     marginTop: '50px',
-    paddingBottom: '50px'
+    paddingBottom: '50px',
   },
-
 }));
 
 function ListPage(props) {
   const classes = useStyles();
-  const [productList, setProductList] = useState([])
+  const [productList, setProductList] = useState([]);
   const [pagination, setPagination] = useState({
     limit: 9,
     total: 9,
@@ -41,48 +40,47 @@ function ListPage(props) {
   const [filters, setFilters] = useState({
     _page: 1,
     _limit: 12,
-    _sort: 'salePrice:ASC'
-  })
+    _sort: 'salePrice:ASC',
+  });
 
-useEffect(() => {
-  (async () => {
-    try{
-      const {data, pagination} = await productApi.getAll(filters);
-      setProductList(data);
-      setPagination(pagination)
-    }catch (error) {
-      console.log('Failed to fetch product list', error);
-    }
-    
-    setLoading(false);
-  })();
-}, [filters]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data, pagination } = await productApi.getAll(filters);
+        setProductList(data);
+        setPagination(pagination);
+      } catch (error) {
+        console.log('Failed to fetch product list', error);
+      }
 
+      setLoading(false);
+    })();
+  }, [filters]);
 
-const handlePageChange = (e, page) => {
-  setFilters((prevFilters)=>({
-    ...prevFilters,
-    _page: page
-  }));
-};
+  const handlePageChange = (e, page) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      _page: page,
+    }));
+  };
 
-const handleSortChange = (newSortValue) => {
-  setFilters((prevFilters) => ({
-    ...prevFilters,
-    _sort: newSortValue,
-  }));
-}
+  const handleSortChange = (newSortValue) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      _sort: newSortValue,
+    }));
+  };
 
-const handleFilterChange = (newFilters) => {
-  setFilters((prevFilters) => ({
-    ...prevFilters,
-    ...newFilters,
-  }));
-}
+  const handleFilterChange = (newFilters) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      ...newFilters,
+    }));
+  };
 
-const setNewFilters = (newFilters) => {
-  setFilters(newFilters);
-};
+  const setNewFilters = (newFilters) => {
+    setFilters(newFilters);
+  };
 
   return (
     <Box>
@@ -98,7 +96,7 @@ const setNewFilters = (newFilters) => {
               <ProductSort currentSort={filters._sort} onChange={handleSortChange} />
               <FilterViewer filters={filters} onChange={setNewFilters} />
               {loading ? <ProductSkeletonList length={9} /> : <ProductList data={productList} />}
-              
+
               <Box className={classes.pagination}>
                 <Pagination
                   color="primary"

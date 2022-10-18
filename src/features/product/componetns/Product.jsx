@@ -26,8 +26,8 @@ function Product({ product }) {
       <Typography variant="body2">{product.name}</Typography>
       <Typography variant="body2">
         <Box component="span" fontSize="16px" fontWeight="bold">
-            {formatPrice(product.salePrice)}
-            </Box>
+          {formatPrice(product.salePrice)}
+        </Box>
 
         {product.promotionPercent > 0 ? ` -${product.promotionPercent}%` : ''}
       </Typography>
